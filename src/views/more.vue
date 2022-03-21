@@ -15,7 +15,9 @@
           @end="onEnd"
         >
           <transition-group>
-            <div class="item" v-for="item in arr1" :key="item.id">{{ item.name }}</div>
+            <div class="item" v-for="item in arr1" :key="item.id">
+              {{ item.name }}
+            </div>
           </transition-group>
         </draggable>
       </div>
@@ -32,7 +34,9 @@
           @end="onEnd"
         >
           <transition-group>
-            <div class="item" v-for="item in arr2" :key="item.id">{{ item.name }}</div>
+            <div class="item" v-for="item in arr2" :key="item.id">
+              {{ item.name }}
+            </div>
           </transition-group>
         </draggable>
       </div>
@@ -42,13 +46,13 @@
 
 <script>
 // 导入draggable组件
-import draggable from 'vuedraggable'
+import draggable from 'vuedraggable';
 export default {
   // 注册draggable组件
   components: {
-    draggable
+    draggable,
   },
-  data () {
+  data() {
     return {
       drag: false,
       // 定义要被拖拽对象的数组
@@ -56,27 +60,27 @@ export default {
         { id: 1, name: 'www.itxst.com' },
         { id: 2, name: 'www.jd.com' },
         { id: 3, name: 'www.baidu.com' },
-        { id: 4, name: 'www.taobao.com' }
+        { id: 4, name: 'www.taobao.com' },
       ],
       arr2: [
         { id: 5, name: 'www.google.com' },
         { id: 6, name: 'www.msn.com' },
         { id: 7, name: 'www.ebay.com' },
-        { id: 8, name: 'www.yahoo.com' }
-      ]
-    }
+        { id: 8, name: 'www.yahoo.com' },
+      ],
+    };
   },
   methods: {
     // 开始拖拽事件
-    onStart () {
-      this.drag = true
+    onStart() {
+      this.drag = true;
     },
     // 拖拽结束事件
-    onEnd () {
-      this.drag = false
-    }
-  }
-}
+    onEnd() {
+      this.drag = false;
+    },
+  },
+};
 </script>
 
 <style scoped>
