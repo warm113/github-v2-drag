@@ -4,6 +4,7 @@ import drag from '../views/index.vue';
 import more from '../views/more.vue';
 import mixin from '../views/mixin.vue';
 import table from '../views/table.vue';
+import atable from '../views/atable.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/table',
     name: 'table',
     component: table,
+  },
+  {
+    path: '/atable',
+    name: 'atable',
+    component: atable,
   },
 ];
 
