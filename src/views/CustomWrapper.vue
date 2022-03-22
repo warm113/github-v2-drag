@@ -1,15 +1,21 @@
 <template>
   <Draggable
+    ref="drag"
     tag="tbody"
+    :options="{ group: 'people' }"
     :list="dataSource"
     animation="500"
     class="drag"
-    @change="onChange"
-    @start="onStart"
-    @end="onEnd"
-    @sort="onSort"
+    :Move="onMove"
     filter=".undraggable"
-    ><!-- -->
+    @start="onStart"
+  >
+    <!--
+      filter=".undraggable"
+      @change="onChange"
+      @start="onStart"
+      @end="onEnd"
+      @sort="onSort" -->
     <slot></slot>
   </Draggable>
 </template>
@@ -27,41 +33,47 @@ export default {
     return {};
   },
   methods: {
-    onChange(evt) {
-      const data = this.dataSource;
-      console.log('this.dataSource');
-      const index = evt.moved.newIndex;
-      console.log('evt', evt);
-      // 将你想要的值 传给父组件
-      this.dataSource.handleDrag({
-        id: data[index].id,
-        before: data[index - 1] ? data[index - 1].id : '',
-        after: data[index + 1] ? data[index + 1].id : '',
-      });
-    },
-    onEnd(e) {
-      const row = document.querySelectorAll('.ant-table-row');
-      console.log('end', e.item.classList[1]);
-      row.forEach((item) => {
-        if (item.classList[1] !== e.item.classList[1]) {
-          console.log('end 返回 false');
-          // item.classList.value = item.classList.value + ' undraggable';
-          return false;
-        }
-      });
-    },
-    onSort(e) {},
+    // onChange(evt) {
+    //   const data = this.dataSource;
+    //   console.log('this.dataSource');
+    //   const index = evt.moved.newIndex;
+    //   console.log('evt', evt);
+    //   将你想要的值 传给父组件
+    //   this.dataSource.handleDrag({
+    //     id: data[index].id,
+    //     before: data[index - 1] ? data[index - 1].id : '',
+    //     after: data[index + 1] ? data[index + 1].id : '',
+    //   });
+    // },
+    // onEnd(e) {
+    //   const row = document.querySelectorAll('.ant-table-row');
+    //   console.log('end', e.item.classList[1]);
+    //   row.forEach((item) => {
+    //     if (item.classList[1] !== e.item.classList[1]) {
+    //       console.log('end 返回 false');
+    //       item.classList.value = item.classList.value + ' undraggable';
+    //       return false;
+    //     }
+    //   });
+    // },
     onStart(e) {
-      console.log('start', e);
+      console.log(this.$refs.drag);
+    },
+    onMove(e, originalEvent) {
+      // 不允许停靠
+      if (e.relatedContext.element.id === 1) return false;
+      // 不允许拖拽
+      if (e.draggedContext.element.id === 4) return false;
+      return true;
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.drag {
-  /deep/ tr {
-    cursor: move;
-  }
-}
+// .drag {
+//   /deep/ tr {
+//     cursor: move;
+//   }
+// }
 </style>

@@ -8,22 +8,24 @@
       default-expand-all
       :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
     >
-      <el-table-column prop="date" label="日期" sortable width="180">
-      </el-table-column>
-      <el-table-column prop="name" label="姓名" sortable width="180">
-      </el-table-column>
-      <el-table-column prop="address" label="地址"> </el-table-column>
+      <draggable>
+        <el-table-column prop="date" label="日期" sortable width="180">
+        </el-table-column>
+        <el-table-column prop="name" label="姓名" sortable width="180">
+        </el-table-column>
+        <el-table-column prop="address" label="地址"> </el-table-column>
+      </draggable>
     </el-table>
   </div>
 </template>
 
 <script>
 // 导入draggable组件
-// import draggable from 'vuedraggable';
+import draggable from 'vuedraggable';
 export default {
   // 注册draggable组件
   components: {
-    // draggable,
+    draggable,
   },
   data() {
     return {
