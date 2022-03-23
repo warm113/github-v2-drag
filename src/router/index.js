@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import drag from '../views/index.vue';
-import more from '../views/more.vue';
-import mixin from '../views/mixin.vue';
-import table from '../views/table.vue';
-import atable from '../views/atable.vue';
-import move from '../views/move.vue';
+import drag from '../views/drag/index.vue';
+import more from '../views/drag/more.vue';
+import mixin from '../views/drag/mixin.vue';
+import table from '../views/drag/table.vue';
+import atable from '../views/drag/atable.vue';
+import move from '../views/drag/move.vue';
 
 Vue.use(VueRouter);
 
