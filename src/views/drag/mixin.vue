@@ -1,4 +1,5 @@
 <template>
+  <!-- 混入第三方组件 -->
   <div style="margin: 20px">
     <draggable
       tag="el-collapse"

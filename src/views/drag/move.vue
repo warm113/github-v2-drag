@@ -1,4 +1,5 @@
 <template>
+  <!-- move 事件 -->
   <!--使用draggable组件-->
   <div class="itxst">
     <div>自定义控制拖拽和停靠</div>
@@ -9,7 +10,9 @@
             :class="item.id === 1 ? 'item forbid' : 'item'"
             v-for="item in arr1"
             :key="item.id"
-          >{{ item.name }}</div>
+          >
+            {{ item.name }}
+          </div>
         </transition-group>
       </draggable>
     </div>
@@ -23,7 +26,7 @@ export default {
   components: {
     draggable,
   },
-  data () {
+  data() {
     return {
       // 定义要被拖拽对象的数组
       arr1: [
@@ -31,14 +34,14 @@ export default {
         { id: 2, name: 'www.jd.com' },
         { id: 3, name: 'www.baidu.com' },
         { id: 5, name: 'www.google.com' },
-        { id: 4, name: 'www.taobao.com（不允许拖拽）' }
-      ]
+        { id: 4, name: 'www.taobao.com（不允许拖拽）' },
+      ],
     };
   },
   methods: {
     // move回调方法
-    onMove (e) {
-      console.log('move', e)
+    onMove(e) {
+      console.log('move', e);
       // // 不允许停靠
       // if (e.relatedContext.element.id === 1) return false;
       // // 不允许拖拽
@@ -46,7 +49,7 @@ export default {
       // return true;
     },
   },
-}
+};
 </script>
 
 <style scoped lang="less">

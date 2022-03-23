@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 多数组拖拽 -->
     <!--使用draggable组件-->
     <div class="itxst">
       <div class="col">
