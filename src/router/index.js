@@ -6,6 +6,7 @@ import mixin from '../views/drag/mixin.vue';
 import table from '../views/drag/table.vue';
 import atable from '../views/drag/atable.vue';
 import move from '../views/drag/move.vue';
+import form from '../views/form/index.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/move',
     name: 'move',
     component: move,
+  },
+  {
+    path: '/form',
+    name: 'form',
+    component: form,
   },
 ];
 
