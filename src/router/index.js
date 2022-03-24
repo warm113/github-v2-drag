@@ -7,6 +7,7 @@ import table from '../views/drag/table.vue';
 import atable from '../views/drag/atable.vue';
 import move from '../views/drag/move.vue';
 import form from '../views/form/index.vue';
+import wordCloud from '../views/wordCloud/index.vue';
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/form',
     name: 'form',
     component: form,
+  },
+  {
+    path: '/wordCloud',
+    name: 'wordCloud',
+    component: wordCloud,
   },
 ];
 
