@@ -8,6 +8,7 @@ import atable from '../views/drag/atable.vue';
 import move from '../views/drag/move.vue';
 import form from '../views/form/index.vue';
 import wordCloud from '../views/wordCloud/index.vue';
+import map from '../views/map/index.vue';
 
 Vue.use(VueRouter);
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/wordCloud',
     name: 'wordCloud',
     component: wordCloud,
+  },
+  {
+    path: '/map',
+    name: 'map',
+    component: map,
   },
 ];
 
