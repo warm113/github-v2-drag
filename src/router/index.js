@@ -9,6 +9,7 @@ import move from '../views/drag/move.vue';
 import form from '../views/form/index.vue';
 import wordCloud from '../views/wordCloud/index.vue';
 import map from '../views/map/index.vue';
+import pdf from '../views/pdf/index.vue'
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/map',
     name: 'map',
     component: map,
+  },
+  {
+    path: '/pdf',
+    name: 'pdf',
+    component: pdf,
   },
 ];
 
