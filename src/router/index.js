@@ -10,6 +10,7 @@ import form from '../views/form/index.vue';
 import wordCloud from '../views/wordCloud/index.vue';
 import map from '../views/map/index.vue';
 import pdf from '../views/pdf/index.vue'
+import test from '../views/test.vue'
 
 Vue.use(VueRouter);
 
@@ -63,6 +64,11 @@ const routes = [
     path: '/pdf',
     name: 'pdf',
     component: pdf,
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: test,
   },
 ];
 

@@ -13,5 +13,6 @@ module.exports = {
     semi: 0,
     'comma-dangle': ['off'],
     'space-before-function-paren': ['off'],
+    'no-multiple-empty-lines': ['off'],
   },
 };

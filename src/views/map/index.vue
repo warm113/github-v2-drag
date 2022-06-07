@@ -1,5 +1,5 @@
 <template>
-  <mapbox-map mapWidth="100%" mapHeight="600px"></mapbox-map>
+  <mapbox-map mapWidth="100vw" mapHeight="100vh"></mapbox-map>
 </template>
 
 <script>
