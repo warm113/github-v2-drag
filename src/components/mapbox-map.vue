@@ -33,7 +33,7 @@ export default {
     map_box() {
       mapboxgl.accessToken = 'pk.eyJ1Ijoid2Fud3UiLCJhIjoiY2wxZ2QybTduMGIyZzNqcGI3c29ibDlzNSJ9.j7dCUFw49j884YQjav9srQ';
       // 天地图（各个区域的token可以在网上查到）
-      var vecUrl = 'http://t0.tianditu.com/vec_w/wmts?tk=2cabf6289e0e90d2903ec5554a07e2c9';
+      var vecUrl = 'http://t0.tianditu.gov.cn/img_w/wmts?tk=2cabf6289e0e90d2903ec5554a07e2c9';
       var cvaUrl = 'http://t0.tianditu.com/cva_w/wmts?tk=2cabf6289e0e90d2903ec5554a07e2c9';
       // 使用严格模式
       // ('use strict');
@@ -43,7 +43,7 @@ export default {
         type: 'raster',
         tiles: [
           // 请求地址
-          vecUrl + '&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=tiles',
+          vecUrl + '&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}',
         ],
         // 分辨率
         tileSize: 256,
